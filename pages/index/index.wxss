@@ -1,0 +1,61 @@
+/**index.wxss**/
+.header {
+  display: flex;
+  /* 侧轴对齐 */
+  align-items: center;
+  padding: 10rpx;
+  margin: 20rpx;
+  border: 1px #e0e0e0 solid;
+  box-shadow: 0 0 10rpx #e0e0e0;
+  border-radius: 5rpx;
+}
+.header input {
+  flex: 1;
+  padding: 10rpx;
+}
+.header image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+
+.todos {
+  border: 1px #e0e0e0 solid;
+  box-shadow: 0 0 10rpx #e0e0e0;
+  border-radius: 5rpx;
+  margin: 20rpx;
+}
+.todos .item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+}
+.todos .item:last-child {
+  border-bottom: 0;
+}
+.todos .item text {
+  flex: 1;
+  font-size: 30rpx;
+  color: #444;
+  margin-left: 20rpx;
+}
+/* 删除的特殊样式 */
+.todos .completed text {
+  color: #888;
+  text-decoration: line-through;
+}
+/* 页脚 */
+.footer {
+  width: 100%;
+  display: flex;
+  font-size: 30rpx;
+  margin: 20rpx;
+  justify-content: space-between;
+  color: #333;
+}
+.null {
+  width: 100%;
+  color: #444;
+  text-align: center;
+}

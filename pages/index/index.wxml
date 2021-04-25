@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="header">
+    <input
+      type="text"
+      placeholder="请输入todos"
+      value="{{ add }}"
+      bindinput="inputChange"
+      bindconfirm="addHandle"
+    />
+    <image src="../../assets/plus.png" bindtap="addHandle"></image>
+  </view>
+  <block wx:if="{{ list.length }}">
+    <view class="todos">
+      <view
+        class="item {{ item.completed ? ' completed' : '' }}"
+        wx:for="{{ list }}"
+        wx:key="key"
+        bindtap="toggleHandle"
+        data-index="{{ index }}"
+      >
+        <icon type="{{ item.completed ? 'success' : 'circle' }}"></icon>
+        <text>{{ item.title }}</text>
+        <icon
+          type="clear"
+          size="18"
+          catchtap="removeHandle"
+          data-index="{{ index }}"
+        ></icon>
+      </view>
+    </view>
+    <view class="footer">
+      <text bindtap="tooggleAllHandle">Toggle all</text>
+      <text wx:if="{{ leftCount }}"
+        >{{ leftCount }} {{ leftCount > 1 ? "items" : "item" }} left</text
+      >
+      <text bindtap="clearHandle">Clear completed</text>
+    </view>
+  </block>
+  <view wx:else class="null">
+    <text>null</text>
+  </view>
+</view>
